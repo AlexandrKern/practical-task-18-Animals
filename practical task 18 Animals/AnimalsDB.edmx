@@ -1,0 +1,134 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="AnimalsDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="AnimalsDBStoreContainer">
+    <EntitySet Name="BirdsSet" EntityType="AnimalsDB.Store.BirdsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AmphibiansSet" EntityType="AnimalsDB.Store.AmphibiansSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MammalsSet" EntityType="AnimalsDB.Store.MammalsSet" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="BirdsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detachment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Family" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ViweAnimal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AmphibiansSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detachment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Family" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ViweAnimal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MammalsSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Detachment" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Family" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ViweAnimal" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="AnimalsDB" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="AnimalsDBContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="BirdsSet" EntityType="AnimalsDB.Birds" />
+          <EntitySet Name="AmphibiansSet" EntityType="AnimalsDB.Amphibians" />
+          <EntitySet Name="MammalsSet" EntityType="AnimalsDB.Mammals" />
+        </EntityContainer>
+        <EntityType Name="Birds">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Detachment" Type="String" Nullable="false" />
+          <Property Name="Family" Type="String" Nullable="false" />
+          <Property Name="ViweAnimal" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Amphibians">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Detachment" Type="String" Nullable="false" />
+          <Property Name="Family" Type="String" Nullable="false" />
+          <Property Name="ViweAnimal" Type="String" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Mammals">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Detachment" Type="String" Nullable="false" />
+          <Property Name="Family" Type="String" Nullable="false" />
+          <Property Name="ViweAnimal" Type="String" Nullable="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AnimalsDBStoreContainer" CdmEntityContainer="AnimalsDBContainer">
+    <EntitySetMapping Name="BirdsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AnimalsDB.Birds)">
+        <MappingFragment StoreEntitySet="BirdsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Detachment" ColumnName="Detachment" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="ViweAnimal" ColumnName="ViweAnimal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AmphibiansSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AnimalsDB.Amphibians)">
+        <MappingFragment StoreEntitySet="AmphibiansSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Detachment" ColumnName="Detachment" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="ViweAnimal" ColumnName="ViweAnimal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MammalsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(AnimalsDB.Mammals)">
+        <MappingFragment StoreEntitySet="MammalsSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Detachment" ColumnName="Detachment" />
+          <ScalarProperty Name="Family" ColumnName="Family" />
+          <ScalarProperty Name="ViweAnimal" ColumnName="ViweAnimal" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
